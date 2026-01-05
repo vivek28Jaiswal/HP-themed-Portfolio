@@ -1,9 +1,59 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { LuSearch } from "react-icons/lu";
 import { RxHamburgerMenu } from "react-icons/rx";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import LocomotiveScroll from "locomotive-scroll";
+
+gsap.registerPlugin(ScrollTrigger);
+
 const App = () => {
+  const scrollRef = useRef(null);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    // Set initial scale immediately to prevent flash
+    if (containerRef.current) {
+      gsap.set(containerRef.current, {
+        scale: 0.7,
+        transformOrigin: "center center",
+      });
+    }
+
+    // Simple scroll-based zoom animation without Locomotive Scroll
+    const zoomAnimation = gsap.to(containerRef.current, {
+      scale: 1,
+      transformOrigin: "center center",
+      ease: "power1.inOut", // Butter smooth easing
+      scrollTrigger: {
+        trigger: containerRef.current,
+        start: "top top",
+        end: "+=800", // Shorter distance for quicker full-screen coverage
+        scrub: 0.5, // More responsive, butter-smooth animation
+        invalidateOnRefresh: true,
+      },
+    });
+
+    // Cleanup
+    return () => {
+      zoomAnimation.kill();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+    };
+  }, []);
+
   return (
-    <div className="relative bg-[#F0E3CD] min-h-screen w-full px-[40px] py-[32px]">
+    <>
+      {/* Scroll Spacer - provides scroll distance */}
+      <div style={{ height: "200vh" }}></div>
+      
+      {/* Fixed Container - zooms on scroll */}
+      <div
+        ref={containerRef}
+        className="fixed top-0 left-0 bg-[#F0E3CD] min-h-screen w-full px-[40px] py-[32px]"
+        style={{
+          willChange: "transform",
+        }}
+      >
       {/* Background layer with opacity */}
       <div className='absolute inset-0 bg-[url("./imgs/paperTexture.png")] bg-cover opacity-40 pointer-events-none'></div>
       
@@ -107,6 +157,7 @@ const App = () => {
 
       </div>
     </div>
+    </>
   );
 };
 

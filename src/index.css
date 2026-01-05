@@ -1,4 +1,10 @@
 @import "tailwindcss";
+@import "./locomotive-scroll.css";
+
+body {
+  background-color: #ffffff;
+}
+
 
 @font-face {
     font-family: 'editorial';
