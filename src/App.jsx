@@ -49,10 +49,10 @@ const App = () => {
           {/* Daily Prophet Header */}
           <div className="daily-prophet-header bg-black text-white px-8 py-8 relative">
             {/* Top Left - Printed in Great Britain */}
-            <span className="absolute top-6 left-8 text-[18px] font-editorial">PRINTED IN GREAT BRITAIN</span>
+            <span className="absolute top-6 left-8 text-[18px] font-editorial text-[#F0E3CD]">PRINTED IN GREAT BRITAIN</span>
             
             {/* Top Right - Issue Date */}
-            <span className="absolute top-6 right-8 text-[18px] font-editorial">ISSUE DATE 01/2/2001</span>
+            <span className="absolute top-6 right-8 text-[18px] font-editorial text-[#F0E3CD]">ISSUE DATE 01/2/2001</span>
             
             {/* Center - Daily Prophet Title */}
             <h1 className="text-[140px] text-[#F0E3CD] font-champGothic2 text-center leading-none py-8">DAILY PROPHET</h1>
@@ -61,7 +61,7 @@ const App = () => {
             <span className="absolute bottom-6 left-8 text-[18px] font-champGothic bg-[#F0E3CD] text-black px-3 py-1">EXCLUSIVE EDITION</span>
             
             {/* Bottom Right - Scroll Down */}
-            <span className="absolute bottom-6 right-8 text-[18px] font-editorial">SCROLL DOWN</span>
+            <span className="absolute bottom-6 right-8 text-[18px] font-editorial text-[#F0E3CD]">SCROLL DOWN</span>
           </div>
 
           {/* Three Column Content Section */}
