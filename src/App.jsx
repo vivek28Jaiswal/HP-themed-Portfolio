@@ -77,14 +77,19 @@ const App = () => {
               </div>
               <h2 className="text-noise text-[110px] font-champGothic leading-[100px] mb-4">EDMUND FAIRCHILD</h2>
               <p className="text-noise text-[16px] font-nato leading-relaxed w-[80%] capitalize">
-                Here’s an expanded version that keeps the tone refined and editorial, without overdoing it Known in creative circles for blending clean UI, smooth motion, and strong storytelling, EDMUND crafts digital experiences that feel intentional, immersive, and human. He specialises in transforming ordinary websites into memorable experiences by combining thoughtful design, subtle...
+                Here's an expanded version that keeps the tone refined and editorial, without overdoing it Known in creative circles for blending clean UI, smooth motion, and strong storytelling, EDMUND crafts digital experiences that feel intentional, immersive, and human. He specialises in transforming ordinary websites into memorable experiences by combining thoughtful design, subtle...
               </p>
+              {/* Decorative underline design */}
+              <div className="mt-4 w-[80%]">
+                <div className="border-t-16 border-black"></div>
+                <div className="border-t-2 border-black mt-1"></div>
+              </div>
             </div>
 
             {/* Middle Column */}
             <div className="middle-column flex flex-col items-start justify-center">
-              <div className="w-full h-[300px] bg-gray-800 flex items-center justify-center">
-                <img src="" alt="" />
+              <div className="w-full h-[340px] bg-gray-800 flex items-center justify-center">
+                <video className="w-full h-full object-cover" src="./videos/bookHolding.mp4" autoPlay loop muted></video>
               </div>
               <h3 className="text-noise text-[80px] font-champGothic text-start mt-0">KNOW MORE!</h3>
             </div>
@@ -92,8 +97,8 @@ const App = () => {
             {/* Right Column */}
             <div className="right-column border-l border-black pl-6">
               <h2 className="text-noise text-[80px] font-champGothic leading-none mb-4">RECENT <br /> MAGICAL <br />WORKS!!</h2>
-              <div className="w-full h-[200px] bg-gray-800 flex items-center justify-center">
-                <span className="text-white text-[14px] font-champGothic"></span>
+              <div className="w-full h-[200px] bg-gray-800 flex items-center justify-center overflow-hidden">
+                  <video className="w-full h-full object-cover object-center" src="./videos/m.mp4" autoPlay loop muted></video>
               </div>
             </div>
 
